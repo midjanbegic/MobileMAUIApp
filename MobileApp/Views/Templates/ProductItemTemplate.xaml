@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MobileApp.Views.Templates.ProductItemTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="ProductContainerStyle" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="300" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="24" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+
+            <Style x:Key="ProductImageStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style x:Key="ProductNameTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="Fallingsky" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="12, 0" />
+            </Style>
+
+            <Style x:Key="ProductDescriptionTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Opacity" Value="0.75" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="FontFamily" Value="Fallingsky" />
+                <Setter Property="Margin" Value="12, 0, 0, 12" />
+            </Style>
+
+            <Style x:Key="ProductPriceTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="Fallingsky" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="12, 0, 0, 12" />
+            </Style>
+
+            <Style x:Key="ProductRatingContainerStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="Padding" Value="4" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0, 0, 12, 12" />
+            </Style>
+
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Frame
+        Style="{StaticResource ProductContainerStyle}">
+        <Grid
+            RowDefinitions="*, Auto, Auto">
+            <Image
+                Source="{Binding Image}"
+                Style="{StaticResource ProductImageStyle}"/>
+            <StackLayout
+                Grid.Row="1">
+                <Label
+                    Text="{Binding Name}"
+                    Style="{StaticResource ProductNameTextStyle}"/>
+                <Label
+                    Text="{Binding Description}" 
+                    Style="{StaticResource ProductDescriptionTextStyle}"/>
+            </StackLayout>
+            <Grid
+                Grid.Row="2"
+                ColumnDefinitions="*, Auto">
+                <Label
+                    Text="{Binding RegularPrice, StringFormat='BAM {0:F2}'}"
+                    Style="{StaticResource ProductPriceTextStyle}"/>
+                <Frame
+                    Grid.Column="1"
+                    Style="{StaticResource ProductRatingContainerStyle}">
+                    <Image
+                        Source="heart.png"/>
+                </Frame>
+            </Grid>
+        </Grid>
+    </Frame>
+</ContentView>
