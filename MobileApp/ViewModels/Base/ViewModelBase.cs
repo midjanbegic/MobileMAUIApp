@@ -1,4 +1,7 @@
-﻿namespace MobileApp.ViewModels
+﻿using Newtonsoft.Json;
+using System.Windows.Input;
+
+namespace MobileApp.ViewModels
 {
    
     public class ViewModelBase : BindableObject

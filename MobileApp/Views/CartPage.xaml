@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:Helper="clr-namespace:MobileApp.Views.Helper"
+             x:Class="MobileApp.Views.CartPage"
+             Title="CartPage">
+
+    <ContentPage.Resources>
+
+        <Style x:Key="FontIconWithRoundedCornersStyle" TargetType="Border">
+            <Setter Property="Padding" Value="15, 2, 15, 7" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Stroke" Value="White" />
+            <Setter Property="StrokeThickness" Value="2" />
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="StrokeShape">
+                <Setter.Value>
+                    <RoundRectangle CornerRadius="500" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </ContentPage.Resources>
+    
+    <!-- IMAGE SECTION -->
+    <VerticalStackLayout BackgroundColor="#FCF7FF">
+        <Grid RowDefinitions="260,Auto,Auto,Auto" RowSpacing="25">
+            <Image
+                Aspect="AspectFill"
+                HeightRequest="260"
+                Source="cheeseburger.jpg"
+                WidthRequest="400">
+                <Image.Clip>
+                    <GeometryGroup>
+                        <RectangleGeometry Rect="0,0,400,100" />
+                        <EllipseGeometry
+                                            Center="200,100"
+                                            RadiusX="420"
+                                            RadiusY="150" />
+                    </GeometryGroup>
+                </Image.Clip>
+            </Image>
+        </Grid>
+
+        <!-- INFO SECTION --> //bindati produkte i price
+        <Grid ColumnDefinitions="140,*,70" ColumnSpacing="50">
+            <Label        
+                FontAttributes="Bold"        
+                FontSize="25"        
+                Text="PRODUCT"        
+                TextColor="Black"         
+                HorizontalOptions="Start"/>
+           
+            <Label       
+                Grid.Column="2"       
+                FontAttributes="Bold"       
+                HorizontalOptions="End"        
+                Text="Price: 5 BAM "
+                TextColor="Black"       
+                VerticalOptions="Center" />
+        </Grid>
+
+        <!-- description --> //bindati desc
+        <Grid>
+            <Label        
+                Grid.Column="2"       
+                FontFamily="IconFontTypes"       
+                FontSize="20"        
+                Text="Beef, tomato, onion, cheese, green salad, ketchup"       
+                TextColor="Gray"       
+                VerticalOptions="Center" />
+        </Grid>
+        <Line
+            Stroke="Black"
+            X2="400"
+            Y1="1"/>
+
+        <!-- SELECTION SECTION -->
+        <!-- Variety title -->
+        <Grid
+            Margin="30,50,0,30"
+            ColumnDefinitions="*,*"    
+            RowDefinitions="*,*">
+            <Label        
+                FontAttributes="Bold"        
+                FontSize="20"        
+                Text="Variety"       
+                TextColor="Black" />
+            <Border       
+                Grid.Column="1"     
+                Margin="0,0,30,0"       
+                Padding="10,6"     
+                Background="#512BD4"     
+                HorizontalOptions="End"     
+                Stroke="#002C6F"       
+                StrokeThickness="0"       
+                VerticalOptions="End">
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="60" />
+                </Border.StrokeShape>
+                
+                <Label           
+                    FontAttributes="Bold"           
+                    Text="1 Required"           
+                    TextColor="White" />
+            </Border>
+            
+            <Label        
+                Grid.Row="1"        
+                FontAttributes="Bold"        
+                FontSize="14"        
+                Text="Choose one"        
+                TextColor="#404756" />
+        </Grid>
+
+        <!-- Variety marks --> //bindati price
+        <Grid
+            Margin="20,10,40,0"    
+            ColumnDefinitions="50,*,*"   
+            RowDefinitions="*,*" 
+            RowSpacing="16">
+            <RadioButton GroupName="RadioGroup" />
+       
+            <Label      
+                Grid.Column="1"      
+                Text="One"      
+                TextColor="Black"      
+                VerticalOptions="Center" />
+
+            <Label     
+                Grid.Column="2"    
+                HorizontalOptions="End"    
+                Text="5 BAM"     
+                TextColor="Black"      
+                VerticalOptions="Center" />
+            <RadioButton Grid.Row="1" GroupName="RadioGroup" />
+
+            <Label       
+                Grid.Row="1"      
+                Grid.Column="1"      
+                Text="Double"      
+                TextColor="Black"       
+                VerticalOptions="Center" />
+            <Label      
+                Grid.Row="1"      
+                Grid.Column="2"      
+                HorizontalOptions="End"      
+                Text="9 BAM"      
+                TextColor="Black"      
+                VerticalOptions="Center" />
+        </Grid>
+
+
+        <!-- BUTTON SECTION -->
+
+        <Grid Margin="10,90,40,30" ColumnDefinitions="50,50,50,*">
+            <Border       
+                Margin="10,0,0,0"       
+                Background="#512BD4"    
+                HorizontalOptions="Center"     
+                Style="{StaticResource FontIconWithRoundedCornersStyle}"      
+                VerticalOptions="Center">
+
+                <Label       
+                    FontFamily="IconFontTypes"      
+                    FontSize="24"        
+                    Text="-"         
+                    TextColor="White" />
+            </Border>
+          
+            <Label       
+                Grid.Column="1"      
+                FontAttributes="Bold"      
+                FontSize="20"      
+                HorizontalOptions="Center"      
+                Text="1"       
+                TextColor="Black"      
+                VerticalOptions="Center"       
+                VerticalTextAlignment="Center" />
+            
+            <Border        
+                Grid.Column="2"          
+                Background="LightGray"       
+                HorizontalOptions="Center"       
+                Style="{StaticResource FontIconWithRoundedCornersStyle}"       
+                VerticalOptions="Center">
+
+                <Label        
+                    Grid.Row="1"
+                    Text="+"           
+                    FontAttributes="Bold"
+                    FontSize="20"           
+                    FontFamily="IconFontTypes"          
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center"
+                    />
+            </Border>
+           
+            <Button       
+                Grid.Column="3"       
+                Text="Checkout"       
+                VerticalOptions="Center" />
+        </Grid>
+
+    </VerticalStackLayout>
+</ContentPage>

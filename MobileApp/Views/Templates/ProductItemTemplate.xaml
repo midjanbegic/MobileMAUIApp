@@ -83,7 +83,8 @@
                 <Frame
                     Grid.Column="1"
                     Style="{StaticResource ProductRatingContainerStyle}">
-                    <Image
+                    <ImageButton
+                        Clicked="testFunc"
                         Source="heart.png"/>
                 </Frame>
             </Grid>

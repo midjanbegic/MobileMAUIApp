@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 
 namespace MobileApp.Models
+
+
+
 {
     public class Product
     {
@@ -29,4 +32,5 @@ namespace MobileApp.Models
         InStock = 1,
         OutOfStock = 2
     }
+
 }

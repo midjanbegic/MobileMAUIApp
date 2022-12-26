@@ -56,6 +56,8 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="2" />
             </Style>
+            
+            
 
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -67,14 +69,59 @@
         BackgroundColor="{StaticResource PageBackgroundColor}">
 
         <!-- HEADER -->
+        
+        <!-- SHOPPING BAG -->
+        <Grid ColumnDefinitions="*, 60">
+
+            <Frame Grid.Column="1"
+                   Margin="0"
+                   Padding="5"
+                   CornerRadius="50"
+                   WidthRequest="40"
+                   HeightRequest="40"
+                   BackgroundColor="#EBEAEF"
+                   BorderColor="Black"
+                   HorizontalOptions="Center">
+                <ImageButton
+                    Clicked="Button_Clicked"
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    Padding="5"
+                    Source="shopping_cart.png"
+                    Background="Transparent"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            </Frame>
+
+            <Frame Grid.Column="1"
+                   WidthRequest="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   CornerRadius="50"
+                   BackgroundColor="Red"
+                   Margin="30,-30,5,0"
+                   HasShadow="true"
+                   BorderColor="Black"
+                   Padding="0">
+                <Label Text="3"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"/>
+            </Frame>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding NavigateToBasketCommand}"
+                                      NumberOfTapsRequired="1"/>
+            </Grid.GestureRecognizers>
+        </Grid>
         <Grid
             ColumnDefinitions="Auto, *"
             Style="{StaticResource SectionContainerStyle}">
             <Label
                 Grid.ColumnSpan="2"
-                Text="Search Product"
+                Text="Company name/logo"
                 Style="{StaticResource TitleTextStyle}"/>
         </Grid>
+
         <!-- SEARCH -->
         <Grid
             Grid.Row="1"
@@ -112,3 +159,4 @@
         </ScrollView>
     </Grid>
 </ContentPage>
+    
