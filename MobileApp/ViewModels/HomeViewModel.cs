@@ -1,16 +1,19 @@
-﻿using MobileApp.Models;
+﻿using CommunityToolkit.Mvvm.Input;
+using MobileApp.Models;
 using MobileApp.Services;
+using MobileApp.Views;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MobileApp.ViewModels
 {
-    public class HomeViewModel : ViewModelBase
+    public partial class HomeViewModel : ViewModelBase
     {
         ObservableCollection<Product> _products;
 
         public HomeViewModel()
         {
-          LoadDataAsync();
+            LoadDataAsync();
         }
 
         public ObservableCollection<Product> Products
@@ -33,5 +36,10 @@ namespace MobileApp.ViewModels
             foreach (var product in _productList)
                 Products.Add(product);
         }
+
+        [RelayCommand]
+
+        Task Navigate() => Shell.Current.GoToAsync(nameof(DetailPage));
+
     }
 }

@@ -62,7 +62,8 @@
         Style="{StaticResource ProductContainerStyle}">
         <Grid
             RowDefinitions="*, Auto, Auto">
-            <Image
+            <ImageButton
+                Clicked="Detail_Page"
                 Source="{Binding Image}"
                 Style="{StaticResource ProductImageStyle}"/>
             <StackLayout
@@ -84,7 +85,6 @@
                     Grid.Column="1"
                     Style="{StaticResource ProductRatingContainerStyle}">
                     <ImageButton
-                        Clicked="testFunc"
                         Source="heart.png"/>
                 </Frame>
             </Grid>

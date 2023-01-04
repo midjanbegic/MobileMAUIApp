@@ -4,7 +4,7 @@
              x:Class="MobileApp.Views.HomeView"
              xmlns:viewmodels="clr-namespace:MobileApp.ViewModels"
              xmlns:templates="clr-namespace:MobileApp.Views.Templates"
-             Title="BeautyShop App">
+             Title="MobileApp">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -145,6 +145,7 @@
             
         </Grid>
         <!-- PRODUCT LIST -->
+        
         <ScrollView
             Grid.Row="2">
             <StackLayout

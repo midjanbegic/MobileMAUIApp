@@ -1,10 +1,12 @@
 ﻿using MobileApp.Models;
 using Newtonsoft.Json;
 
+
 namespace MobileApp.Services
 {
     public class ProductService
     {
+
         static ProductService _instance;
 
         private string _baseUrl = "https://staging.komercijala.ba/api/products?importProviderKey=9dab1d09-eac7-4185-bec4-8032db2f0bc3";
@@ -16,6 +18,7 @@ namespace MobileApp.Services
 
         public async Task<List<Product>> GetProducts()
         {
+
             var returnResponse = new List<Product>();
             try
             {
@@ -46,6 +49,9 @@ namespace MobileApp.Services
             }
 
             return returnResponse;
+
+
         }
+
     }
 }

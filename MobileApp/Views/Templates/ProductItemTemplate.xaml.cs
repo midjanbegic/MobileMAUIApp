@@ -12,9 +12,9 @@ public partial class ProductItemTemplate : ContentView
         Navigation.PushAsync(new CartPage());
     }
 
-  
-    public void testFunc(object sender, System.EventArgs e)
+
+    private void Detail_Page(object sender, EventArgs e)
     {
-        Console.WriteLine("test 123");
+        Navigation.PushAsync(new DetailPage());
     }
 }
