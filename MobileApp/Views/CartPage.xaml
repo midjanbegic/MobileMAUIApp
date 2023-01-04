@@ -4,6 +4,7 @@
               xmlns:Helper="clr-namespace:MobileApp.Views.Helper"
              x:Class="MobileApp.Views.CartPage"
              Title="CartPage">
+    
 
     
 </ContentPage>
